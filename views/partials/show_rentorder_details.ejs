@@ -1,0 +1,135 @@
+
+<style>
+  
+    #imgs{
+        
+        width: 140px;
+        height: 90px;
+        margin-top: 20px;
+        margin-left: 10px;
+      
+    }
+    </style>
+    
+    
+    
+    <section class="content">
+      <div class="page-heading">
+          <h1>Rent</h1>
+          <ol class="breadcrumb">
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="javascript:void(0);">E-Commerce</a></li>
+              <li class="active">Rentorder</li>
+          </ol>
+      </div>
+      <div class="page-body">
+          <div class="panel panel-default">
+            
+            <div class="panel-heading"> </div>
+            
+           
+              <div class="panel-body cart-panel">
+                  <div class="table-responsive">
+                      <table class="table table-hover cart">
+                          <thead>
+                              <tr>
+                                  <th>Item List</th>
+                                  <th>Product Name</th>
+                                  <th>Quantity</th>         
+                                  <th>Rent</th>
+                                  <th>Security Deposite</th>
+                                  <th>Tenure</th>
+                                  <th>Status</th>
+                                  <th>update</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                <% for(var i=0; i < data.length; i++) { %>
+    
+                                  <td><img src="/uploads/<%=data[i].productId.images[0]%>"alt="img" id="imgs"> </td>           
+                                  <td><%=data[i].productId.product_name%></td>  
+                                  <td><%=data[i].qty%></td>
+                                  <td><b>Rs</b> <%=data[i].total_price%></td>
+                                  <td><b>Rs</b>  <%=data[i].productId.refund_pollicy%></td>
+                                  <td><%=data[i].duration%>  <b>months</b></td>
+                                  <td><b><%=data[i].status%></b></td>
+                                  <td><a href="/public/rentcarts_update/<%=data[i].id%>" class="btn btn-primary"><i class="fa fa-edit">Edit</i></a></td>
+    
+                              </tr>
+                              
+                              
+                              <% } %>
+    
+                          </tbody>
+                      </table>
+                  </div>
+    
+                  <div class="row clearfix m-t-25">
+                      <div class="col-sm-7">
+                          <div class="payment-methods">
+                              <!-- <h2>PAYMENT METHODS</h2>
+                              <ul>
+                                  <li><i class="fa fa-cc-visa" data-toggle="tooltip" data-title="Visa"></i></li>
+                                  <li>
+                                      <i class="fa fa-cc-mastercard" data-toggle="tooltip"
+                                         data-title="Master Card"></i>
+                                  </li>
+                                  <li>
+                                      <i class="fa fa-cc-amex" data-toggle="tooltip"
+                                         data-title="American Express"></i>
+                                  </li>
+                                  <li>
+                                      <i class="fa fa-cc-paypal" data-toggle="tooltip" data-title="PayPal"></i>
+                                  </li>
+                              </ul> -->
+                          </div>
+                          <!-- <div class="well">
+                              Lorem ipsum dolor sit amet, usu nullam tractatos voluptaria cu. An accusam
+                              posidonium sea, simul dolore eum ut, hinc tota...
+                          </div> -->
+                      </div>
+    
+    
+                      <div class="col-sm-5">
+                          <div class="table-responsive">
+                              <table class="table cart-total-table">
+                                  <tbody>
+                                      <tr>
+                                          <td>Name</td>       
+                                          <td><b><%=data[0].userId.name %></b>  </td> 
+          
+                                        
+                                      </tr>
+                                      <tr>
+                                          <td>Email</td>
+                                          <td><b><%=data[0].userId.email %></b> </td>
+                                      </tr>
+                                      <tr>
+                                          <td>Phone</td>
+                                          <td><b><%=data[0].userId.phone %></b> </td>
+                                      </tr>
+                                      <!-- <tr>
+                                          <td class="font-16">TOTAL</td>
+                                          <td><span class="amount">$508.25</span></td>
+                                      </tr> -->
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="panel-footer">
+                  <!-- <div class="m-t-5 m-b-5">
+                      <button type="button" class="btn btn-sm btn-default">
+                          <i class="fa fa-arrow-left m-r-5"></i>Continue Shopping
+                      </button>
+                      <button type="button" class="btn btn-sm btn-success pull-right">
+                          <i class="fa fa-shopping-cart m-r-5"></i>Checkout
+                      </button>
+                  </div> -->
+              </div>
+          </div>
+      </div>
+    
+    </section>

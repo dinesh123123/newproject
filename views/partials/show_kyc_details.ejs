@@ -1,0 +1,94 @@
+<style>#line_chart {  
+    height: 1px;
+     margin-top: opx;
+     margin-left: 25px; }
+
+         
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+
+#imgs{
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  padding: 5px;
+  width: 900px;
+  height: 500px;
+}
+     </style>
+
+      <section class="content dashboard">
+            <div class="main-graph">
+                    <div class="row clearfix">
+                        <div class="col-xs-12 col-sm-6 col-md-8 col-lg-10 padding-0 overflow-hidden">
+                            <div class="graph-area">
+                                 <div id="line_chart"></div>
+                            </div> 
+                        </div>
+                      
+                    </div>
+                </div>
+                <!-- #END# Main Graph-->
+            <div class="page-heading">
+                <h1>kyc varification</h1>
+                <ol class="breadcrumb">
+                    <li><a href="/public/index">Home</a></li>
+                    <li class="active">Kyc</li>
+                </ol>
+            </div>
+
+
+            <div class="panel panel-default">
+                <% for(var i=0; i < data.length; i++) { %>
+                <div class="panel-heading"> <button type="open-button"  onclick="openForm()"class="btn btn-info add-new"><i class="fa fa-edit"></i><a href="/public/kyc_update/<%=data[i].id%>"> Status</a></button></div>
+                <% } %>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table id="myTable" class="table js-exportable">
+                            
+                            <thead>
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Images</th>                                 
+                                        
+                                     
+                                    </tr>
+                                </thead>
+                                <tbody>
+            <% for(var i=0; i < data.length; i++) { %>
+                                   
+        <tr>
+         <td><%= i+1%></td>         
+  <td><img src="/uploads/<%=data[i].images[0]%>"alt="img" id="imgs"></td>
+  <td><img src="/uploads/<%=data[i].images[1]%>"alt="img" id="imgs"></td>
+  <td><img src="/uploads/<%=data[i].images[2]%>"alt="img" id="imgs"></td>
+  <td><img src="/uploads/<%=data[i].images[3]%>"alt="img" id="imgs"></td>
+  <td><img src="/uploads/<%=data[i].images[4]%>"alt="img" id="imgs"></td>
+  <td><img src="/uploads/<%=data[i].images[5]%>"alt="img" id="imgs"></td>
+  <td><img src="/uploads/<%=data[i].images[6]%>"alt="img" id="imgs"></td>
+  <td><img src="/uploads/<%=data[i].images[7]%>"alt="img" id="imgs"></td>
+  <td><img src="/uploads/<%=data[i].images[8]%>"alt="img" id="imgs"></td>
+  <td><img src="/uploads/<%=data[i].images[9]%>"alt="img" id="imgs"></td>
+  <td><img src="/uploads/<%=data[i].images[10]%>"alt="img" id="imgs"></td>
+  <td><img src="/uploads/<%=data[i].images[11]%>"alt="img" id="imgs"></td>
+  
+ 
+
+                                        </tr>
+                                        <% } %>
+
+
+                               </tbody> 
+                        
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Task data -->
+            </div>
+        </section>

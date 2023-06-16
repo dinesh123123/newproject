@@ -1,0 +1,105 @@
+<style>#line_chart {  
+    height: 1px;
+     margin-top: opx;
+     margin-left: 25px; }
+
+         
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+#imgs{
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  padding: 5px;
+  width: 130px;
+}
+     </style>
+
+      <section class="content dashboard">
+            <div class="main-graph">
+                    <div class="row clearfix">
+                        <div class="col-xs-12 col-sm-6 col-md-8 col-lg-10 padding-0 overflow-hidden">
+                            <div class="graph-area">
+                                 <div id="line_chart"></div>
+                            </div> 
+                        </div>
+                      
+                    </div>
+                </div>
+                <!-- #END# Main Graph-->
+            <div class="page-heading">
+                <h1>Inventory Tab</h1>
+                <ol class="breadcrumb">
+                    <li><a href="/public/index">Home</a></li>
+                    <li class="active">Inventory  list</li>
+                </ol>
+            </div>
+
+
+            <div class="panel panel-default">
+            
+                <div class="panel-heading"> </div>
+            
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table id="myTable" class="table js-exportable">
+                            
+                                <thead>
+                        <tr>
+                        <th>S.No</th>
+                        <th>Product name</th>
+                        <!-- <th>Products</th>  -->
+                        <!-- <th>Product type</th> -->
+                        <th>Image</th>
+                        <!-- <th>Price</th> -->
+                        <!-- <th>Selling price</th>
+                        <th>Rent Price</th>                       
+                        <th>Security Deposite</th> -->
+                        <!-- <th>Offer</th> -->
+                        <th>Instock</th>             
+                        <th>Action</th>
+            </tr>
+        </thead>
+            <tbody>
+                <% for(var i=0; i < data.length; i++) { %>
+                                       
+            <tr>
+             <td><%= i+1%></td>
+             <td><%=data[i].product_name%></td>
+            <!-- <td><%=data[i].products%></td>
+            <td><%=data[i].product_type%></td> -->
+
+            <%  if(data[i].images.length>0){ %>
+            <td><img src="/uploads/<%=data[i].images[0]%>"alt="cars"style="height:35px;weight:35px;">
+                <% } %>
+            </td>
+            <!-- <td><%=data[i].price%></td> -->
+             <!-- <td><%=data[i].selling_price%></td>
+             <td><%=data[i].rent_selling_price%></td>
+             <td><%=data[i].refund_pollicy%></td> -->
+             <!-- <td><%=data[i].offer%></td> -->
+             <td><%=data[i].instock%></td>
+           
+     
+    
+    <!-- <td><a href ="/public/delete_product/<%= data[i].id%>"class="btn btn-circle  btn-sm  btn-danger"><i class="fa fa-trash"></i></a> -->
+    
+   <td> <a href="/public/update_instock/<%= data[i].id%>" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+    
+    </td>
+                                            </tr>
+                                            <% } %>
+                                   </tbody> 
+                            
+                                </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Task data -->
+            </div>
+        </section>
